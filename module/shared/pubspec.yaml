@@ -1,0 +1,47 @@
+publish_to: none
+name: shared
+description: A new Flutter module project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  injectable: ^2.1.1
+  get_it: ^7.6.0
+  intl: ^0.18.0
+
+  freezed: ^2.1.1
+  freezed_annotation: ^2.0.3
+
+  rxdart: ^0.27.2
+  dartx: ^1.1.0
+  data:
+    path: ../data
+
+  remote:
+    path: ../remote
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  injectable_generator: ^2.1.5
+
+  # Auto generate some files
+  build_runner: ^2.3.3
+
+
+flutter:
+
+  uses-material-design: true
+
+  module:
+    androidX: true
+    androidPackage: com.example.shared
+    iosBundleIdentifier: com.example.shared

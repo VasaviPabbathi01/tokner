@@ -1,0 +1,72 @@
+publish_to: none
+name: remote
+description: A new Flutter module project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  http: ^0.13.1
+
+  injectable: ^2.1.1
+
+  get_it: ^7.6.0
+
+  # network
+  connectivity_plus: ^5.0.1
+
+  # database
+  hive: ^2.2.0
+  hive_flutter: ^1.1.0
+
+  # For Networking
+  dio: ^4.0.3
+
+  retrofit: ^3.3.1
+
+  enum_to_string: ^2.0.1
+
+  freezed: ^2.1.1
+
+  freezed_annotation: ^2.0.3
+
+  json_annotation: ^4.8.1
+
+  # encryption
+  encrypt: ^5.0.1
+
+  domain:
+    path: ../domain
+
+  data:
+    path: ../data
+
+  shared:
+    path: ../shared
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  injectable_generator: ^2.1.5
+
+  build_runner: ^2.3.3
+
+  retrofit_generator: ^4.2.0
+
+  json_serializable: ^6.7.0
+
+  flutter_gen_runner: ^5.2.0
+
+flutter:
+
+  uses-material-design: true
+  module:
+    androidX: true
+    androidPackage: com.example.remote
+    iosBundleIdentifier: com.example.remote
