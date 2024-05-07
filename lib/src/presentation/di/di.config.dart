@@ -12,6 +12,8 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:tokner/src/presentation/app/bloc/app_bloc.dart' as _i3;
 import 'package:tokner/src/presentation/base/common/common_bloc.dart' as _i4;
+import 'package:tokner/src/presentation/ui/homePage/bloc/homepage_bloc.dart'
+    as _i5;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -26,6 +28,7 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.factory<_i3.AppBloc>(() => _i3.AppBloc());
     gh.factory<_i4.CommonBloc>(() => _i4.CommonBloc());
+    gh.factory<_i5.HomePageBloc>(() => _i5.HomePageBloc());
     return this;
   }
 }

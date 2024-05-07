@@ -9,9 +9,9 @@ import 'color_theme.dart';
 
 final ThemeData lightTheme = ThemeData(
     primarySwatch: Colors.blue,
-    primaryColor: ColorName.color0C1121,
-    scaffoldBackgroundColor: ColorName.colorFDF4EA,
-    fontFamily: FontFamily.hankenGrotesk,
+    primaryColor: ColorName.primaryColor,
+    scaffoldBackgroundColor: ColorName.primaryColor,
+    fontFamily: FontFamily.gothic,
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
         TargetPlatform.iOS: NoShadowCupertinoPageTransitionsBuilder(),
@@ -21,78 +21,78 @@ final ThemeData lightTheme = ThemeData(
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      iconTheme: IconThemeData(color: ColorName.accentLightColor),
+      iconTheme: IconThemeData(color: ColorName.primaryColor),
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: ColorName.colorE7131A,
-      disabledColor: ColorName.gray70,
+      buttonColor: ColorName.primaryColor,
+      disabledColor: ColorName.primaryColor,
     ),
     textTheme: _buildTextTheme(AppearanceMode.light),
     colorScheme: lightThemeColors(),
-    unselectedWidgetColor: ColorName.color0C1121,
-    dividerColor: ColorName.colorE3e3e3,
-    dialogTheme: const DialogTheme(backgroundColor: ColorName.white),
+    unselectedWidgetColor: ColorName.primaryColor,
+    dividerColor: ColorName.primaryColor,
+    dialogTheme: const DialogTheme(backgroundColor: ColorName.primaryColor),
     bottomSheetTheme:
         const BottomSheetThemeData(backgroundColor: Colors.transparent));
 
 final ThemeData darkTheme = ThemeData(
     primarySwatch: Colors.blueGrey,
-    primaryColor: ColorName.colorCAD7FF,
-    scaffoldBackgroundColor: ColorName.color080C18,
-    fontFamily: FontFamily.hankenGrotesk,
+    primaryColor: ColorName.primaryColor,
+    scaffoldBackgroundColor: ColorName.primaryColor,
+    fontFamily: FontFamily.gothic,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      iconTheme: IconThemeData(color: ColorName.white),
+      iconTheme: IconThemeData(color: ColorName.primaryColor),
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: ColorName.colorE7131A,
-      disabledColor: ColorName.gray70,
+      buttonColor: ColorName.primaryColor,
+      disabledColor: ColorName.primaryColor,
     ),
     textTheme: _buildTextTheme(AppearanceMode.dark),
     colorScheme: darkThemeColors(),
-    dividerColor: ColorName.colorE3e3e3,
-    unselectedWidgetColor: ColorName.colorCAD7FF,
-    dialogTheme: const DialogTheme(backgroundColor: ColorName.color13192A),
+    dividerColor: ColorName.primaryColor,
+    unselectedWidgetColor: ColorName.primaryColor,
+    dialogTheme: const DialogTheme(backgroundColor: ColorName.primaryColor),
     bottomSheetTheme:
         const BottomSheetThemeData(backgroundColor: Colors.transparent));
 
 final ThemeData contrastTheme = ThemeData(
     primarySwatch: Colors.blueGrey,
-    primaryColor: ColorName.colorDEDB21,
-    scaffoldBackgroundColor: ColorName.black,
-    fontFamily: FontFamily.hankenGrotesk,
+    primaryColor: ColorName.primaryColor,
+    scaffoldBackgroundColor: ColorName.primaryColor,
+    fontFamily: FontFamily.gothic,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      iconTheme: IconThemeData(color: ColorName.white),
+      iconTheme: IconThemeData(color: ColorName.primaryColor),
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: ColorName.colorDEDB21,
-      disabledColor: ColorName.color838110,
+      buttonColor: ColorName.primaryColor,
+      disabledColor: ColorName.primaryColor,
     ),
     textTheme: _buildTextTheme(AppearanceMode.contrast),
     colorScheme: contrastThemeColors(),
-    dividerColor: ColorName.colorDEDB21,
-    unselectedWidgetColor: ColorName.colorDEDB21,
-    dialogTheme: const DialogTheme(backgroundColor: ColorName.color1A1A1A),
+    dividerColor: ColorName.primaryColor,
+    unselectedWidgetColor: ColorName.primaryColor,
+    dialogTheme: const DialogTheme(backgroundColor: ColorName.primaryColor),
     bottomSheetTheme:
         const BottomSheetThemeData(backgroundColor: Colors.transparent));
 
 Color getTextColor(AppearanceMode mode) {
   switch (mode) {
     case AppearanceMode.light:
-      return ColorName.subTextColor;
+      return ColorName.primaryColor;
     case AppearanceMode.dark:
-      return ColorName.colorCAD7FF;
+      return ColorName.primaryColor;
     case AppearanceMode.system:
       var brightness =
           SchedulerBinding.instance.platformDispatcher.platformBrightness;
       return brightness == Brightness.light
-          ? ColorName.subTextColor
-          : ColorName.colorCAD7FF;
+          ? ColorName.primaryColor
+          : ColorName.primaryColor;
     case AppearanceMode.contrast:
-      return ColorName.colorDEDB21;
+      return ColorName.primaryColor;
   }
 }
 
@@ -102,19 +102,19 @@ TextTheme _buildTextTheme(AppearanceMode mode) {
       fontWeight: FontWeight.w500,
       fontSize: 32.0,
       color: getTextColor(mode),
-      fontFamily: FontFamily.jost,
+      fontFamily: FontFamily.gothic,
     ),
     displayMedium: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 24.0,
       color: getTextColor(mode),
-      fontFamily: FontFamily.jost,
+      fontFamily: FontFamily.gothic,
     ),
     displaySmall: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 20.0,
       color: getTextColor(mode),
-      fontFamily: FontFamily.jost,
+      fontFamily: FontFamily.gothic,
     ),
     headlineMedium: TextStyle(
       fontWeight: FontWeight.w700,

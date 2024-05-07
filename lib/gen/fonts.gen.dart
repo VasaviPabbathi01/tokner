@@ -10,12 +10,6 @@
 class FontFamily {
   FontFamily._();
 
-  /// Font family: HankenGrotesk
-  static const String hankenGrotesk = 'HankenGrotesk';
-
-  /// Font family: Jost
-  static const String jost = 'Jost';
-
-  /// Font family: Manrope
-  static const String manrope = 'Manrope';
+  /// Font family: GOTHIC
+  static const String gothic = 'GOTHIC';
 }

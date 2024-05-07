@@ -24,9 +24,9 @@ class NoInternet extends StatelessWidget {
             Text(
               LanguageTranslation.current.no_internet,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeColorName.dialogText,
+                    color: ThemeColorName.dashboardBg,
                     fontWeight: FontWeight.w600,
-                    fontFamily: FontFamily.jost,
+                    fontFamily: FontFamily.gothic,
                     fontSize: 20,
                   ),
             ),
@@ -37,9 +37,9 @@ class NoInternet extends StatelessWidget {
               LanguageTranslation.current.no_internet_subtext,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: ThemeColorName.dialogText,
+                    color: ThemeColorName.dashboardBg,
                     fontWeight: FontWeight.w400,
-                    fontFamily: FontFamily.hankenGrotesk,
+                    fontFamily: FontFamily.gothic,
                     fontSize: 14,
                   ),
             ),

@@ -35,7 +35,7 @@ class ConfirmPopup extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .titleMedium
-                  ?.copyWith(color: ThemeColorName.dialogText),
+                  ?.copyWith(color: ThemeColorName.dashboardBg),
             ),
             const SizedBox(
               height: 12.0,
@@ -46,7 +46,7 @@ class ConfirmPopup extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium
-                  ?.copyWith(color: ThemeColorName.dialogText),
+                  ?.copyWith(color: ThemeColorName.dashboardBg),
             ),
             const SizedBox(
               height: 32.0,
