@@ -257,47 +257,45 @@ class _FooterComponentState extends State<FooterComponent> {
             if (sizingInformation.isDesktop) {
               return SizedBox(
                 height: 170,
-                width: MediaQuery.of(context).size.width * 0.58,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 70.0),
-                  child: ListView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: appBarText.length,
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return Row(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              appBarText[index].toUpperCase(),
-                              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                  fontFamily: FontFamily.gothic,
-                                  color: ColorName.primaryColor,
-                                  fontWeight: FontWeight.w700,
-                                  decoration: TextDecoration.underline,
-                                  letterSpacing: 2),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 40,
-                          ),
+                child: ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: appBarText.length,
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [
+                        Text(
+                          appBarText[index].toUpperCase(),
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              fontFamily: FontFamily.gothic,
+                              color: ColorName.primaryColor,
+                              fontWeight: FontWeight.w700,
+                              decoration: TextDecoration.underline,
+                              letterSpacing: 2),
+                        ),
+                        SizedBox(
+                          width: index == appBarText.length-1 ? 0 : 40,
+                        ),
+                        if (!(index == appBarText.length-1)) ...[
                           Text(
                             "/",
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
                               fontFamily: FontFamily.gothic,
                               color: ColorName.primaryColor.withOpacity(0.16),
                               fontWeight: FontWeight.w700,
                             ),
-                          ),
-                          const SizedBox(
-                            width: 40,
-                          ),
+                          )
                         ],
-                      );
-                    },
-                  ),
+                        SizedBox(
+                          width: index == appBarText.length-1 ? 0 : 40,
+                        ),
+                      ],
+                    );
+                  },
                 ),
               );
             }

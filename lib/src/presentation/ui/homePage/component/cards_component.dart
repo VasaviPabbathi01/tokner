@@ -48,7 +48,7 @@ class _CardsComponentState extends State<CardsComponent> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.65, width: double.infinity, child: cards(deviceScreenType, cardData)),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.7, width: double.infinity, child: cards(deviceScreenType, cardData)),
             const SizedBox(
               height: 50,
             ),
@@ -81,7 +81,7 @@ class _CardsComponentState extends State<CardsComponent> {
               return Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: index.isOdd ? 80 : 0),
+                    padding: EdgeInsets.only(top: index.isOdd ? 110 : 0),
                     child: Container(
                       height: index.isEven ? MediaQuery.of(context).size.height * 0.48 : MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width * 0.40,

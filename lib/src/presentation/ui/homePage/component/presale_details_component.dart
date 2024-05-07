@@ -1,5 +1,4 @@
 import 'package:data/data.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -91,7 +90,7 @@ class _PresaleDetailsComponentState extends BasePageState<PresaleDetailsComponen
                 height: 420,
                 child: PageView.builder(
                     itemCount: details.length,
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
                     onPageChanged: (index) {
                       bloc.add(PresaleIndexChanged(index: index));
                     },
