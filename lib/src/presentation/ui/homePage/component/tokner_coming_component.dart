@@ -93,7 +93,7 @@ class _ToknerComingComponentState extends BasePageState<ToknerComingComponent,Ho
                 ],
               ),
             ),
-            Assets.images.vector.image(),
+            Assets.images.vector.image(height: MediaQuery.of(context).size.height*0.5,fit: BoxFit.fill),
           ],
         );
       },
@@ -117,7 +117,7 @@ class _ToknerComingComponentState extends BasePageState<ToknerComingComponent,Ho
           color: ColorName.colorE20613),
     ];
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: deviceScreenType == DeviceScreenType.mobile ? 20 : MediaQuery.of(context).size.width*0.01),
+      padding: EdgeInsets.symmetric(horizontal: deviceScreenType == DeviceScreenType.mobile ? 20 : MediaQuery.of(context).size.width*0.125),
       child: SizedBox(
         height: deviceScreenType == DeviceScreenType.mobile ? 1000 : 400,
         width: deviceScreenType == DeviceScreenType.mobile ? MediaQuery.of(context).size.width : MediaQuery.of(context).size.width * 0.75,
@@ -214,7 +214,7 @@ class _ToknerComingComponentState extends BasePageState<ToknerComingComponent,Ho
     return BlocBuilder<HomePageBloc, HomePageState>(
   builder: (context, state) {
     return Padding(
-      padding: EdgeInsets.only(left: deviceScreenType == DeviceScreenType.mobile ? 20 : 155.0, right: deviceScreenType == DeviceScreenType.mobile ? 20 : 0.0),
+      padding: EdgeInsets.only(left: deviceScreenType == DeviceScreenType.mobile ? 20 : MediaQuery.of(context).size.width*0.125, right: deviceScreenType == DeviceScreenType.mobile ? 20 : 0.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

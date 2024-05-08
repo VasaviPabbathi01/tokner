@@ -22,50 +22,50 @@ class _CoverPageState extends State<CoverPage> {
             Assets.images.mobileBg.image(width: MediaQuery.of(context).size.width, fit: BoxFit.cover),
             Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 70),
-                  child: Row(
-                    children: [
-                      appLogo(),
-                      const Spacer(),
-                      MenuAnchor(
-                        builder: (BuildContext context, MenuController controller, Widget? child) {
-                          return IconButton(
-                            onPressed: () {
-                              if (controller.isOpen) {
-                                controller.close();
-                              } else {
-                                controller.open();
-                              }
-                            },
-                            icon: const Icon(
-                              Icons.menu,
-                              color: ColorName.primaryColor,
-                            ),
-                            tooltip: 'Show menu',
-                          );
-                        },
-                        menuChildren: List<MenuItemButton>.generate(
-                          actionTags.length,
-                          (int index) => MenuItemButton(
-                            onPressed: () {},
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(actionTags[index],
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14,
-                                      color: Color(int.parse('0xFF333333')),
-                                    )),
-                              ],
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 70),
+                //   child: Row(
+                //     children: [
+                //       appLogo(),
+                //       const Spacer(),
+                //       MenuAnchor(
+                //         builder: (BuildContext context, MenuController controller, Widget? child) {
+                //           return IconButton(
+                //             onPressed: () {
+                //               if (controller.isOpen) {
+                //                 controller.close();
+                //               } else {
+                //                 controller.open();
+                //               }
+                //             },
+                //             icon: const Icon(
+                //               Icons.menu,
+                //               color: ColorName.primaryColor,
+                //             ),
+                //             tooltip: 'Show menu',
+                //           );
+                //         },
+                //         menuChildren: List<MenuItemButton>.generate(
+                //           actionTags.length,
+                //           (int index) => MenuItemButton(
+                //             onPressed: () {},
+                //             child: Column(
+                //               crossAxisAlignment: CrossAxisAlignment.start,
+                //               children: [
+                //                 Text(actionTags[index],
+                //                     style: TextStyle(
+                //                       fontWeight: FontWeight.w600,
+                //                       fontSize: 14,
+                //                       color: Color(int.parse('0xFF333333')),
+                //                     )),
+                //               ],
+                //             ),
+                //           ),
+                //         ),
+                //       )
+                //     ],
+                //   ),
+                // ),
                 coverPageText(deviceScreenType),
                 Stack(
                   children: [
@@ -187,7 +187,7 @@ class _CoverPageState extends State<CoverPage> {
 
   Widget coverPageText(DeviceScreenType deviceScreenType) {
     return Padding(
-      padding: EdgeInsets.only(left: deviceScreenType == DeviceScreenType.mobile ? 25 : 175.0,right: deviceScreenType == DeviceScreenType.mobile ? 25 : 0),
+      padding: EdgeInsets.only(left: deviceScreenType == DeviceScreenType.mobile ? 25 : MediaQuery.of(context).size.width*0.125,right: deviceScreenType == DeviceScreenType.mobile ? 25 : 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

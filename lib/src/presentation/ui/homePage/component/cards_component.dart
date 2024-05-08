@@ -69,7 +69,7 @@ class _CardsComponentState extends State<CardsComponent> {
 
   Widget cards(DeviceScreenType deviceScreenType, List<CardModel> cardData) {
     return Padding(
-      padding: EdgeInsets.only(left: deviceScreenType == DeviceScreenType.desktop ? 175 : 23),
+      padding: EdgeInsets.only(left: deviceScreenType == DeviceScreenType.desktop ? MediaQuery.of(context).size.width*0.125 : 23),
       child: ListView.builder(
         itemCount: cardData.length,
         shrinkWrap: true,
@@ -124,7 +124,7 @@ class _CardsComponentState extends State<CardsComponent> {
             return Column(
               children: [
                 Container(
-                  //height: MediaQuery.of(context).size.height * 0.55,
+                  margin: const EdgeInsets.only(right: 25),
                   width: MediaQuery.of(context).size.width * 0.90,
                   decoration: BoxDecoration(color: ColorName.color171B29, borderRadius: BorderRadius.circular(16.0)),
                   child: Padding(

@@ -63,6 +63,7 @@ class _FooterComponentState extends State<FooterComponent> {
           LanguageTranslation.current.how_to_buy,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontFamily: FontFamily.gothic, color: ColorName.primaryColor, fontWeight: FontWeight.w700, fontSize: 36),
         ),
+        if(!(deviceScreenType == DeviceScreenType.desktop)) ...[const SizedBox(height: 20)],
         ResponsiveBuilder(
           builder: (context, sizingInformation) {
             if (sizingInformation.isDesktop) {
@@ -85,7 +86,7 @@ class _FooterComponentState extends State<FooterComponent> {
                               Padding(
                                 padding: EdgeInsets.only(top: index == 1 ? 100 : 0),
                                 child: Container(
-                                  height: MediaQuery.of(context).size.height * 0.3,
+                                  height: MediaQuery.of(context).size.height * 0.35,
                                   width: MediaQuery.of(context).size.width * 0.30,
                                   decoration: BoxDecoration(color: ColorName.color171B29, borderRadius: BorderRadius.circular(16.0)),
                                   child: Column(
@@ -103,7 +104,7 @@ class _FooterComponentState extends State<FooterComponent> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 90, right: 90, top: 20),
+                                        padding: const EdgeInsets.only(left: 90, right: 90, top: 30),
                                         child: Text(
                                           buyData[index],
                                           style: Theme.of(context)
@@ -178,6 +179,7 @@ class _FooterComponentState extends State<FooterComponent> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
+                            margin: const EdgeInsets.only(right: 25),
                             height: MediaQuery.of(context).size.height * 0.3,
                             width: MediaQuery.of(context).size.width * 0.90,
                             decoration: BoxDecoration(color: ColorName.color171B29, borderRadius: BorderRadius.circular(16.0)),
@@ -217,7 +219,7 @@ class _FooterComponentState extends State<FooterComponent> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 170.0, left: 220),
+                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.27, left: MediaQuery.of(context).size.width*0.43),
                   child: ListView.builder(
                     itemCount: buyData.length - 1,
                     shrinkWrap: true,

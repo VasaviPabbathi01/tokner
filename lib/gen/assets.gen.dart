@@ -39,6 +39,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/ic_star.png
   AssetGenImage get icStar => const AssetGenImage('assets/images/ic_star.png');
 
+  /// File path: assets/images/mobile_appbar_bg.png
+  AssetGenImage get mobileAppbarBg => const AssetGenImage('assets/images/mobile_appbar_bg.png');
+
   /// File path: assets/images/mobile_arc.png
   AssetGenImage get mobileArc => const AssetGenImage('assets/images/mobile_arc.png');
 
@@ -89,6 +92,7 @@ class $AssetsImagesGen {
         icCrown,
         icLogo,
         icStar,
+        mobileAppbarBg,
         mobileArc,
         mobileBg,
         mobileCoverPageImg,
