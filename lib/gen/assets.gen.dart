@@ -39,8 +39,17 @@ class $AssetsImagesGen {
   /// File path: assets/images/ic_star.png
   AssetGenImage get icStar => const AssetGenImage('assets/images/ic_star.png');
 
-  /// File path: assets/images/mobile_appbar_bg.png
-  AssetGenImage get mobileAppbarBg => const AssetGenImage('assets/images/mobile_appbar_bg.png');
+  /// File path: assets/images/image 1.png
+  AssetGenImage get image1 => const AssetGenImage('assets/images/image 1.png');
+
+  /// File path: assets/images/image 2.png
+  AssetGenImage get image2 => const AssetGenImage('assets/images/image 2.png');
+
+  /// File path: assets/images/image 3.png
+  AssetGenImage get image3 => const AssetGenImage('assets/images/image 3.png');
+
+  /// File path: assets/images/image 4.png
+  AssetGenImage get image4 => const AssetGenImage('assets/images/image 4.png');
 
   /// File path: assets/images/mobile_arc.png
   AssetGenImage get mobileArc => const AssetGenImage('assets/images/mobile_arc.png');
@@ -54,6 +63,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/mobile_presale.png
   AssetGenImage get mobilePresale => const AssetGenImage('assets/images/mobile_presale.png');
 
+  /// File path: assets/images/ourteam_background.png
+  AssetGenImage get ourteamBackground => const AssetGenImage('assets/images/ourteam_background.png');
+
   /// File path: assets/images/phase_one.png
   AssetGenImage get phaseOne => const AssetGenImage('assets/images/phase_one.png');
 
@@ -65,6 +77,12 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/presale_vector_bottom.png
   AssetGenImage get presaleVectorBottom => const AssetGenImage('assets/images/presale_vector_bottom.png');
+
+  /// File path: assets/images/token_distribution.png
+  AssetGenImage get tokenDistribution => const AssetGenImage('assets/images/token_distribution.png');
+
+  /// File path: assets/images/token_distribution_blur.png
+  AssetGenImage get tokenDistributionBlur => const AssetGenImage('assets/images/token_distribution_blur.png');
 
   /// File path: assets/images/tokner_coming_image.png
   AssetGenImage get toknerComingImage => const AssetGenImage('assets/images/tokner_coming_image.png');
@@ -92,15 +110,21 @@ class $AssetsImagesGen {
         icCrown,
         icLogo,
         icStar,
-        mobileAppbarBg,
+        image1,
+        image2,
+        image3,
+        image4,
         mobileArc,
         mobileBg,
         mobileCoverPageImg,
         mobilePresale,
+        ourteamBackground,
         phaseOne,
         phaseThree,
         phaseTwo,
         presaleVectorBottom,
+        tokenDistribution,
+        tokenDistributionBlur,
         toknerComingImage,
         vector,
         vectorPresaleTop,

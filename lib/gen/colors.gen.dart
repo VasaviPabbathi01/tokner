@@ -19,6 +19,15 @@ class ColorName {
   /// Color: #22A75D
   static const Color buttonColor = Color(0xFF22A75D);
 
+  /// Color: #000000
+  static const Color color000000 = Color(0xFF000000);
+
+  /// Color: #0D0B16
+  static const Color color0D0B16 = Color(0xFF0D0B16);
+
+  /// Color: #0F87CA
+  static const Color color0F87CA = Color(0xFF0F87CA);
+
   /// Color: #171B29
   static const Color color171B29 = Color(0xFF171B29);
 

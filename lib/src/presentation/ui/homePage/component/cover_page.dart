@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:tokner/app.dart';
+import 'package:tokner/src/presentation/ui/homePage/bloc/homepage_bloc.dart';
+import 'package:tokner/src/presentation/widget/webappbar.dart';
+
+import '../../../base/bloc_page/base_page_state.dart';
 
 class CoverPage extends StatefulWidget {
   const CoverPage({super.key});
@@ -10,9 +14,9 @@ class CoverPage extends StatefulWidget {
   State<CoverPage> createState() => _CoverPageState();
 }
 
-class _CoverPageState extends State<CoverPage> {
+class _CoverPageState extends BasePageState<CoverPage,HomePageBloc> {
   @override
-  Widget build(BuildContext context) {
+  Widget buildPage(BuildContext context) {
     var deviceScreenType = getDeviceType(MediaQuery.of(context).size);
     List<String> actionTags = ['Our team', 'Tokens', 'Connect wallet', 'Light paper'];
     return ScreenTypeLayout.builder(
@@ -22,50 +26,6 @@ class _CoverPageState extends State<CoverPage> {
             Assets.images.mobileBg.image(width: MediaQuery.of(context).size.width, fit: BoxFit.cover),
             Column(
               children: [
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 70),
-                //   child: Row(
-                //     children: [
-                //       appLogo(),
-                //       const Spacer(),
-                //       MenuAnchor(
-                //         builder: (BuildContext context, MenuController controller, Widget? child) {
-                //           return IconButton(
-                //             onPressed: () {
-                //               if (controller.isOpen) {
-                //                 controller.close();
-                //               } else {
-                //                 controller.open();
-                //               }
-                //             },
-                //             icon: const Icon(
-                //               Icons.menu,
-                //               color: ColorName.primaryColor,
-                //             ),
-                //             tooltip: 'Show menu',
-                //           );
-                //         },
-                //         menuChildren: List<MenuItemButton>.generate(
-                //           actionTags.length,
-                //           (int index) => MenuItemButton(
-                //             onPressed: () {},
-                //             child: Column(
-                //               crossAxisAlignment: CrossAxisAlignment.start,
-                //               children: [
-                //                 Text(actionTags[index],
-                //                     style: TextStyle(
-                //                       fontWeight: FontWeight.w600,
-                //                       fontSize: 14,
-                //                       color: Color(int.parse('0xFF333333')),
-                //                     )),
-                //               ],
-                //             ),
-                //           ),
-                //         ),
-                //       )
-                //     ],
-                //   ),
-                // ),
                 coverPageText(deviceScreenType),
                 Stack(
                   children: [
@@ -85,32 +45,9 @@ class _CoverPageState extends State<CoverPage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 30.0, right: 30, top: 10),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      appLogo(),
-                      SizedBox(width: MediaQuery.of(context).size.width * 0.05),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 45.0),
-                        child: webAppBarText(actionTags),
-                      ),
-                      const Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: Text(
-                          LanguageTranslation.current.sign_in,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.copyWith(color: ColorName.primaryColor, fontWeight: FontWeight.w600, letterSpacing: 2, fontFamily: FontFamily.gothic),
-                        ),
-                      ),
-                      const SizedBox(width: 30),
-                      signUpButton(),
-                    ],
-                  ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 30.0, right: 30, top: 10),
+                  child: WebAppBar(),
                 ),
                 Row(
                   children: [
@@ -124,64 +61,6 @@ class _CoverPageState extends State<CoverPage> {
           ],
         );
       },
-    );
-  }
-
-  Widget appLogo() {
-    return Row(
-      children: [
-        Assets.images.appLogo.image(width: 47, height: 29),
-        Text(
-          LanguageTranslation.current.tokners,
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: ColorName.primaryColor, fontWeight: FontWeight.w600, letterSpacing: 2, fontFamily: FontFamily.gothic),
-        ),
-      ],
-    );
-  }
-
-  Widget webAppBarText(List<String> actionTags) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
-      height: 50,
-      child: ListView.separated(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemCount: actionTags.length,
-        itemBuilder: (context, index) {
-          return Text(
-            actionTags[index],
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorName.primaryColor, fontWeight: FontWeight.w600, letterSpacing: 2, fontFamily: FontFamily.gothic),
-          );
-        },
-        separatorBuilder: (context, index) => SizedBox(
-          width: MediaQuery.of(context).size.width * 0.02,
-        ),
-      ),
-    );
-  }
-
-  Widget signUpButton() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: OutlinedButton(
-        onPressed: () {},
-        style: OutlinedButton.styleFrom(
-            side: const BorderSide(
-              width: 2.0,
-              color: ColorName.buttonColor,
-            ),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(52.0)),
-            minimumSize: Size(MediaQuery.of(context).size.width * 0.09, 48)),
-        child: Text(
-          LanguageTranslation.current.sign_up,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                fontFamily: FontFamily.gothic,
-                color: ColorName.primaryColor,
-                fontWeight: FontWeight.w700,
-              ),
-        ),
-      ),
     );
   }
 

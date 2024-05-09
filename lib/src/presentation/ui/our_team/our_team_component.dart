@@ -1,37 +1,33 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:tokner/src/presentation/ui/homePage/bloc/homepage_bloc.dart';
-import 'package:tokner/src/presentation/ui/homePage/component/footer_component.dart';
-import 'package:tokner/src/presentation/widget/app_logo.dart';
+import 'package:tokner/src/presentation/ui/our_team/component/our_team_desktop.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../gen/colors.gen.dart';
 import '../../../../gen/fonts.gen.dart';
 import '../../../../generated/l10n.dart';
-import '../../base/bloc_page/base_page_state.dart';
+import '../../widget/app_logo.dart';
 import '../distribution_module/distribution_page.dart';
-import '../our_team/our_team_component.dart';
-import 'component/cards_component.dart';
-import 'component/cover_page.dart';
-import 'component/tokner_coming_component.dart';
+import 'component/our_team_mobile.dart';
 
-class Homepage extends StatefulWidget {
-  const Homepage({super.key});
+class OurTeamPage extends StatefulWidget {
+  const OurTeamPage({super.key});
 
   @override
-  State<Homepage> createState() => _HomepageState();
+  State<OurTeamPage> createState() => _OurTeamPageState();
 }
 
-class _HomepageState extends BasePageState<Homepage,HomePageBloc> {
+class _OurTeamPageState extends State<OurTeamPage> {
+  LanguageTranslation text = LanguageTranslation.current;
+
   @override
-  Widget buildPage(BuildContext context) {
+  Widget build(BuildContext context) {
     List<String> actionTags = ['Our team', 'Tokens', 'Connect wallet', 'Light paper'];
     var deviceScreenType = getDeviceType(MediaQuery.of(context).size);
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: ColorName.backGround,
       appBar: deviceScreenType == DeviceScreenType.mobile || deviceScreenType == DeviceScreenType.tablet
-      ? AppBar(
+          ? AppBar(
         toolbarHeight: 100,
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -86,17 +82,12 @@ class _HomepageState extends BasePageState<Homepage,HomePageBloc> {
         preferredSize: Size.fromHeight(0),
         child: SizedBox(),
       ),
-      body: const SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CoverPage(),
-            CardsComponent(),
-            ToknerComingComponent(),
-            FooterComponent(),
-          ],
-        ),
-      ),
+      body: ResponsiveBuilder(builder: (BuildContext context, SizingInformation sizingInformation) {
+        if(sizingInformation.isDesktop){
+          return const OurTeamDesktop();
+        }
+        return const OurTeamMobile();
+      },),
     );
   }
 }

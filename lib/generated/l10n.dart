@@ -389,6 +389,96 @@ class LanguageTranslation {
       args: [],
     );
   }
+
+  /// `Tknrs Tokenomics and Token Distribution`
+  String get token_distribution_title {
+    return Intl.message(
+      'Tknrs Tokenomics and Token Distribution',
+      name: 'token_distribution_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tknrs Token Distribution Schedule Total Supply:`
+  String get token_distribution_sub_text {
+    return Intl.message(
+      'Tknrs Token Distribution Schedule Total Supply:',
+      name: 'token_distribution_sub_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tknrs Tokens`
+  String get tknrs_tokens {
+    return Intl.message(
+      'Tknrs Tokens',
+      name: 'tknrs_tokens',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Premined Tokens`
+  String get premined_tokens {
+    return Intl.message(
+      'Premined Tokens',
+      name: 'premined_tokens',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily Token Distribution`
+  String get daily_token_distribution {
+    return Intl.message(
+      'Daily Token Distribution',
+      name: 'daily_token_distribution',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Year`
+  String get year_text {
+    return Intl.message(
+      'Year',
+      name: 'year_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `M Tokens/Day`
+  String get tokens_per_day {
+    return Intl.message(
+      'M Tokens/Day',
+      name: 'tokens_per_day',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `M Tokens`
+  String get m_tokens {
+    return Intl.message(
+      'M Tokens',
+      name: 'm_tokens',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our Team`
+  String get team_title {
+    return Intl.message(
+      'Our Team',
+      name: 'team_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate

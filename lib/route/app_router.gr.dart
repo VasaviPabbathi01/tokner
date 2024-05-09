@@ -22,7 +22,19 @@ class _$AppRouter extends RootStackRouter {
         routeData: routeData,
         child: const Homepage(),
       );
-    }
+    },
+    DistributionPageRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const DistributionPage(),
+      );
+    },
+    OurTeamPageRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const OurTeamPage(),
+      );
+    },
   };
 
   @override
@@ -30,7 +42,15 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           HomepageRoute.name,
           path: '/',
-        )
+        ),
+        RouteConfig(
+          DistributionPageRoute.name,
+          path: '/DistributionPage',
+        ),
+        RouteConfig(
+          OurTeamPageRoute.name,
+          path: '/OurTeamPage',
+        ),
       ];
 }
 
@@ -44,4 +64,28 @@ class HomepageRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomepageRoute';
+}
+
+/// generated route for
+/// [DistributionPage]
+class DistributionPageRoute extends PageRouteInfo<void> {
+  const DistributionPageRoute()
+      : super(
+          DistributionPageRoute.name,
+          path: '/DistributionPage',
+        );
+
+  static const String name = 'DistributionPageRoute';
+}
+
+/// generated route for
+/// [OurTeamPage]
+class OurTeamPageRoute extends PageRouteInfo<void> {
+  const OurTeamPageRoute()
+      : super(
+          OurTeamPageRoute.name,
+          path: '/OurTeamPage',
+        );
+
+  static const String name = 'OurTeamPageRoute';
 }

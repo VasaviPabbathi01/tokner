@@ -169,7 +169,7 @@ class _CardsComponentState extends State<CardsComponent> {
   Widget whiteContainer(DeviceScreenType deviceScreenType) {
     return Container(
       width: deviceScreenType == DeviceScreenType.desktop ? MediaQuery.of(context).size.width * 0.5 : MediaQuery.of(context).size.width,
-      height: deviceScreenType == DeviceScreenType.desktop ? MediaQuery.of(context).size.height * 0.90 : MediaQuery.of(context).size.height,
+      height: deviceScreenType == DeviceScreenType.desktop ? MediaQuery.of(context).size.height * 0.90 : null,
       decoration: BoxDecoration(
         color: ColorName.primaryColor,
         borderRadius: BorderRadius.only(
@@ -180,7 +180,9 @@ class _CardsComponentState extends State<CardsComponent> {
         padding: EdgeInsets.only(
             top: deviceScreenType == DeviceScreenType.desktop ? 150.0 : 90,
             left: deviceScreenType == DeviceScreenType.desktop ? 120.0 : 20,
-            right: deviceScreenType == DeviceScreenType.desktop ? 60.0 : 20),
+            right: deviceScreenType == DeviceScreenType.desktop ? 60.0 : 20,
+            bottom: 20
+        ),
         child: RichText(
             text: TextSpan(
                 text: LanguageTranslation.current.white_container_question,

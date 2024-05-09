@@ -5,6 +5,7 @@ import '../../../../../gen/assets.gen.dart';
 import '../../../../../gen/colors.gen.dart';
 import '../../../../../gen/fonts.gen.dart';
 import '../../../../../generated/l10n.dart';
+import '../../../widget/footer.dart';
 
 class FooterComponent extends StatefulWidget {
   const FooterComponent({super.key});
@@ -34,7 +35,7 @@ class _FooterComponentState extends State<FooterComponent> {
                 const SizedBox(
                   height: 30,
                 ),
-                footerComponent(deviceScreenType)
+                const Footer()
               ],
             )
           ],
@@ -47,7 +48,7 @@ class _FooterComponentState extends State<FooterComponent> {
             const SizedBox(
               height: 30,
             ),
-            footerComponent(deviceScreenType)
+            const Footer()
           ],
         );
       },
@@ -242,8 +243,8 @@ class _FooterComponentState extends State<FooterComponent> {
                                 size: 22,
                                 color: index == 0 ? ColorName.buttonColor : ColorName.colorFFD100,
                               )),
-                          const SizedBox(
-                            height: 150,
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height*0.26,
                           )
                         ],
                       );
@@ -254,109 +255,8 @@ class _FooterComponentState extends State<FooterComponent> {
             );
           },
         ),
-        ResponsiveBuilder(
-          builder: (context, sizingInformation) {
-            if (sizingInformation.isDesktop) {
-              return SizedBox(
-                height: 170,
-                child: ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: appBarText.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return Row(
-                      children: [
-                        Text(
-                          appBarText[index].toUpperCase(),
-                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              fontFamily: FontFamily.gothic,
-                              color: ColorName.primaryColor,
-                              fontWeight: FontWeight.w700,
-                              decoration: TextDecoration.underline,
-                              letterSpacing: 2),
-                        ),
-                        SizedBox(
-                          width: index == appBarText.length-1 ? 0 : 40,
-                        ),
-                        if (!(index == appBarText.length-1)) ...[
-                          Text(
-                            "/",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium
-                                ?.copyWith(
-                              fontFamily: FontFamily.gothic,
-                              color: ColorName.primaryColor.withOpacity(0.16),
-                              fontWeight: FontWeight.w700,
-                            ),
-                          )
-                        ],
-                        SizedBox(
-                          width: index == appBarText.length-1 ? 0 : 40,
-                        ),
-                      ],
-                    );
-                  },
-                ),
-              );
-            }
-            return const SizedBox();
-          },
-        ),
-      ],
-    );
-  }
 
-  Widget footerComponent(DeviceScreenType deviceScreenType) {
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        if (sizingInformation.isDesktop) {
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Assets.images.icLogo.image(height: 30, fit: BoxFit.fill),
-              Assets.images.contactUs.image(height: 30, fit: BoxFit.fill),
-              Text(
-                LanguageTranslation.current.footer_cp,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontFamily: FontFamily.gothic,
-                  color: ColorName.primaryColor,
-                  fontSize: 8,
-                  fontWeight: FontWeight.w700,
-                ),
-              )
-            ],
-          );
-        }
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Assets.images.icLogo.image(height: 30, fit: BoxFit.fitHeight),
-            const SizedBox(
-              height: 40,
-            ),
-            Assets.images.contactUs.image(height: 60,width: 400, fit: BoxFit.fill),
-            const SizedBox(
-              height: 40,
-            ),
-            Text(
-              LanguageTranslation.current.footer_cp,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                fontFamily: FontFamily.gothic,
-                color: ColorName.primaryColor,
-                fontSize: 8,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-          ],
-        );
-      },
+      ],
     );
   }
 }

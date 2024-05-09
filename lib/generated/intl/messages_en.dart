@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "We are creating social media 3.0 with influencers, celebrities and creators being able to launch their own digital currency by simply creating a profile with media content posted as Non fungible Tokens that can be owned and traded on the Tknrs network"),
         "cover_page_text": MessageLookupByLibrary.simpleMessage(
             "Reimagining social media through the power of the blockchain."),
+        "daily_token_distribution":
+            MessageLookupByLibrary.simpleMessage("Daily Token Distribution"),
         "description_1": MessageLookupByLibrary.simpleMessage(
             "Cryptocurrency adoption is at less than 1% of the global world population with some countries and entities actively fighting against its mass adoption and the smartest developers and nerds holding the fort."),
         "description_2": MessageLookupByLibrary.simpleMessage(
@@ -50,11 +52,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "hide": MessageLookupByLibrary.simpleMessage("Hide"),
         "how_to_buy": MessageLookupByLibrary.simpleMessage("How to buy"),
         "learn_more": MessageLookupByLibrary.simpleMessage("Learn More"),
+        "m_tokens": MessageLookupByLibrary.simpleMessage("M Tokens"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "no_internet":
             MessageLookupByLibrary.simpleMessage("No Internet connection"),
         "no_internet_subtext": MessageLookupByLibrary.simpleMessage(
             "We apologise for the inconvenience,\nplease check your internet connection"),
+        "premined_tokens":
+            MessageLookupByLibrary.simpleMessage("Premined Tokens"),
         "presale_details":
             MessageLookupByLibrary.simpleMessage("Presale Details"),
         "read_more": MessageLookupByLibrary.simpleMessage("Read More"),
@@ -62,8 +67,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "soft_cap": MessageLookupByLibrary.simpleMessage("Soft cap: "),
+        "team_title": MessageLookupByLibrary.simpleMessage("Our Team"),
         "title_text": MessageLookupByLibrary.simpleMessage(
             "Reimagining social media through the power of the blockchain."),
+        "tknrs_tokens": MessageLookupByLibrary.simpleMessage("Tknrs Tokens"),
+        "token_distribution_sub_text": MessageLookupByLibrary.simpleMessage(
+            "Tknrs Token Distribution Schedule Total Supply:"),
+        "token_distribution_title": MessageLookupByLibrary.simpleMessage(
+            "Tknrs Tokenomics and Token Distribution"),
+        "tokens_per_day": MessageLookupByLibrary.simpleMessage("M Tokens/Day"),
         "tokner_is_coming":
             MessageLookupByLibrary.simpleMessage("Tokner is coming"),
         "tokners": MessageLookupByLibrary.simpleMessage("Tokners"),
@@ -75,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "We would only launch tokens with the express permission of the creators.\n\n"),
         "white_container_question": MessageLookupByLibrary.simpleMessage(
             "What makes us different?\n\n"),
-        "year": MessageLookupByLibrary.simpleMessage("2021")
+        "year": MessageLookupByLibrary.simpleMessage("2021"),
+        "year_text": MessageLookupByLibrary.simpleMessage("Year")
       };
 }
