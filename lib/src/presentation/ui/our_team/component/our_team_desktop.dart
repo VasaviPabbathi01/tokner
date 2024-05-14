@@ -46,7 +46,7 @@ class _OurTeamDesktopState extends BasePageState<OurTeamDesktop, OurTeamBloc> {
                   children: [
                     const Padding(
                       padding: EdgeInsets.only(left: 28.0, right: 28, top: 10),
-                      child: WebAppBar(),
+                      child: WebAppBar(indexValue: 0),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.07),

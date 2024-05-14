@@ -1,15 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:tokner/src/presentation/ui/distribution_module/component/supplycomponent.dart';
 import 'package:tokner/src/presentation/ui/distribution_module/component/tokens_component.dart';
 import 'package:tokner/src/presentation/ui/distribution_module/component/year_component.dart';
-import 'package:tokner/src/presentation/widget/webappbar.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../gen/colors.gen.dart';
 import '../../../../gen/fonts.gen.dart';
-import '../../../../generated/l10n.dart';
 import '../../widget/app_logo.dart';
 import '../our_team/our_team_component.dart';
 
@@ -29,6 +26,7 @@ class _DistributionPageState extends State<DistributionPage> {
       backgroundColor: ColorName.backGround,
       appBar: deviceScreenType == DeviceScreenType.mobile || deviceScreenType == DeviceScreenType.tablet
           ? AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 100,
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -58,9 +56,6 @@ class _DistributionPageState extends State<DistributionPage> {
                     onPressed: (){
                       if(index == 0){
                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const OurTeamPage()));
-                      }
-                      if(index == 1){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const DistributionPage()));
                       }
                     },
                 child: Column(

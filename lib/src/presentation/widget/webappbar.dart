@@ -1,19 +1,16 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:tokner/app.dart';
 import 'package:tokner/src/presentation/ui/distribution_module/distribution_page.dart';
 import 'package:tokner/src/presentation/ui/our_team/our_team_component.dart';
 import 'package:tokner/src/presentation/widget/touch_effect.dart';
 
-import '../../../../gen/assets.gen.dart';
-import '../../../../gen/colors.gen.dart';
-import '../../../../gen/fonts.gen.dart';
-import '../../../../generated/l10n.dart';
 import 'app_logo.dart';
 
 class WebAppBar extends StatefulWidget {
-  const WebAppBar({
+ final int indexValue;
+   const WebAppBar({
     super.key,
+    required this.indexValue
   });
 
   @override
@@ -28,7 +25,7 @@ class _WebAppBarState extends State<WebAppBar> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const AppLogo(),
+         AppLogo(indexValue: widget.indexValue),
         SizedBox(width: MediaQuery.of(context).size.width * 0.05),
         Padding(
           padding: const EdgeInsets.only(top: 45.0),
@@ -64,16 +61,16 @@ class _WebAppBarState extends State<WebAppBar> {
         itemBuilder: (context, index) {
           return TouchEffect(
             onTap: (){
-              if(index == 0){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OurTeamPage()));
+              if(index == 0 && widget.indexValue != 0){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const OurTeamPage()));
               }
-              if(index == 1){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DistributionPage()));
+              if(index == 1 && widget.indexValue != 1){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const DistributionPage()));
               }
             },
             child: Text(
               actionTags[index],
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorName.primaryColor, fontWeight: FontWeight.w600, letterSpacing: 2, fontFamily: FontFamily.gothic),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color:widget.indexValue == index ? ColorName.colorFFD100 : ColorName.primaryColor, fontWeight:widget.indexValue == index ? FontWeight.w800 : FontWeight.w600, letterSpacing: 2, fontFamily: FontFamily.gothic),
             ),
           );
         },

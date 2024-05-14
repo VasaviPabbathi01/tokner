@@ -132,8 +132,8 @@ class TokensDistribution extends StatelessWidget {
                   height: 40,
                 ),
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.0),
-                  child: WebAppBar(),
+                  padding: EdgeInsets.only(left: 30.0,right: 30,top: 10),
+                  child: WebAppBar(indexValue: 1),
                 ),
                 Padding(
                   padding: EdgeInsets.only(

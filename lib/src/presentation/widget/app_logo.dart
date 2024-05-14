@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tokner/src/presentation/ui/homePage/homepage.dart';
 import 'package:tokner/src/presentation/widget/touch_effect.dart';
@@ -9,13 +8,16 @@ import '../../../gen/fonts.gen.dart';
 import '../../../generated/l10n.dart';
 
 class AppLogo extends StatelessWidget {
-  const AppLogo({super.key});
+  final int indexValue;
+  const AppLogo({super.key,this.indexValue = 0});
 
   @override
   Widget build(BuildContext context) {
     return TouchEffect(
       onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Homepage()));
+        if(indexValue != 5){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Homepage()));
+        }
       },
       child: Row(
         children: [

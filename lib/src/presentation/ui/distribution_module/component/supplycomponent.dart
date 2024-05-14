@@ -61,46 +61,121 @@ class _SupplyComponentState extends State<SupplyComponent> {
           ],
         );
       }
-      return Column(
+     return Column(
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height*1.2,
-            width: MediaQuery.of(context).size.width,
+          Stack(
             alignment: Alignment.center,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(Assets.images.mobilePresale.path),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.only(left: 20,right: 20,top: MediaQuery.of(context).size.height*0.1),
-              child: SizedBox(
-                height: 600,
-                child: ListView.builder(
-                  itemCount: supplyModel.length,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        whiteContainer(deviceType, supplyModel, index),
-                        const SizedBox(
-                          height: 20,
-                        )
-                      ],
-                    );
-                  },
+            children: [
+              Assets.images.mobilePresale.image(
+                  height: MediaQuery.of(context).size.width*1.8,
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.fill),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 20.0, right: 20,top: 20),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.width*1.5,
+                  child: ListView.builder(
+                    itemCount: supplyModel.length,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          whiteContainer(deviceType, supplyModel, index),
+                          const SizedBox(
+                            height: 20,
+                          )
+                        ],
+                      );
+                    },
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
+          // Container(
+          //   height: MediaQuery.of(context).size.height * 1.2,
+          //   width: MediaQuery.of(context).size.width,
+          //   alignment: Alignment.center,
+          //   decoration: BoxDecoration(
+          //     image: DecorationImage(
+          //       image: AssetImage(Assets.images.imgMobilePresale.path),
+          //       fit: BoxFit.fill,
+          //     ),
+          //   ),
+          //   child: Padding(
+          //     padding: EdgeInsets.only(
+          //         left: 20.0, right: 20, top: MediaQuery.of(context).size.height * 0.1),
+          //     child: SizedBox(
+          //       height: 600,
+          //       child: ListView.builder(
+          //         itemCount: supplyModel.length,
+          //         shrinkWrap: true,
+          //         physics: const NeverScrollableScrollPhysics(),
+          //         scrollDirection: Axis.vertical,
+          //         itemBuilder: (context, index) {
+          //           return Column(
+          //             mainAxisAlignment: MainAxisAlignment.start,
+          //             crossAxisAlignment: CrossAxisAlignment.start,
+          //             children: [
+          //               whiteContainer(deviceType, supplyModel, index),
+          //               const SizedBox(
+          //                 height: 20,
+          //               )
+          //             ],
+          //           );
+          //         },
+          //       ),
+          //     ),
+          //   ),
+          // ),
+
           const Footer()
         ],
-      );
+      );      //   Column(
+      //   children: [
+      //     Container(
+      //       height: MediaQuery.of(context).size.height*1.2,
+      //       width: MediaQuery.of(context).size.width,
+      //       alignment: Alignment.center,
+      //       decoration: BoxDecoration(
+      //         image: DecorationImage(
+      //           image: AssetImage(Assets.images.mobilePresale.path),
+      //           fit: BoxFit.fill,
+      //         ),
+      //       ),
+      //       child: Padding(
+      //         padding: EdgeInsets.only(left: 20,right: 20,top: MediaQuery.of(context).size.height*0.1),
+      //         child: SizedBox(
+      //           height: 600,
+      //           child: ListView.builder(
+      //             itemCount: supplyModel.length,
+      //             shrinkWrap: true,
+      //             physics: const NeverScrollableScrollPhysics(),
+      //             scrollDirection: Axis.vertical,
+      //             itemBuilder: (context, index) {
+      //               return Column(
+      //                 mainAxisAlignment: MainAxisAlignment.start,
+      //                 crossAxisAlignment: CrossAxisAlignment.start,
+      //                 children: [
+      //                   whiteContainer(deviceType, supplyModel, index),
+      //                   const SizedBox(
+      //                     height: 20,
+      //                   )
+      //                 ],
+      //               );
+      //             },
+      //           ),
+      //         ),
+      //       ),
+      //     ),
+      //     const Footer()
+      //   ],
+      // );
     });
   }
 
@@ -156,6 +231,9 @@ class _SupplyComponentState extends State<SupplyComponent> {
       width: deviceType == DeviceScreenType.desktop
           ? MediaQuery.of(context).size.width * 0.55
           : MediaQuery.of(context).size.width * 0.9,
+      height: deviceType == DeviceScreenType.desktop
+          ? null
+          : MediaQuery.of(context).size.width * 0.7,
       decoration: BoxDecoration(color: ColorName.primaryColor, borderRadius: BorderRadius.circular(25)),
       child: Padding(
         padding: EdgeInsets.symmetric(

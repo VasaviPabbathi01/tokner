@@ -28,6 +28,7 @@ class _OurTeamPageState extends State<OurTeamPage> {
       backgroundColor: ColorName.backGround,
       appBar: deviceScreenType == DeviceScreenType.mobile || deviceScreenType == DeviceScreenType.tablet
           ? AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 100,
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -55,9 +56,6 @@ class _OurTeamPageState extends State<OurTeamPage> {
               actionTags.length,
                   (int index) => MenuItemButton(
                     onPressed: (){
-                      if(index == 0){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const OurTeamPage()));
-                      }
                       if(index == 1){
                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const DistributionPage()));
                       }

@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:tokner/src/presentation/ui/homePage/bloc/homepage_bloc.dart';
 import 'package:tokner/src/presentation/ui/homePage/component/footer_component.dart';
 import 'package:tokner/src/presentation/widget/app_logo.dart';
+import 'package:tokner/src/presentation/widget/webappbar.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../gen/colors.gen.dart';
 import '../../../../gen/fonts.gen.dart';
-import '../../../../generated/l10n.dart';
 import '../../base/bloc_page/base_page_state.dart';
 import '../distribution_module/distribution_page.dart';
 import '../our_team/our_team_component.dart';
@@ -32,6 +31,7 @@ class _HomepageState extends BasePageState<Homepage,HomePageBloc> {
       backgroundColor: ColorName.backGround,
       appBar: deviceScreenType == DeviceScreenType.mobile || deviceScreenType == DeviceScreenType.tablet
       ? AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 100,
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -52,7 +52,6 @@ class _HomepageState extends BasePageState<Homepage,HomePageBloc> {
                   Icons.menu,
                   color: ColorName.primaryColor,
                 ),
-                // tooltip: 'Show menu',
               );
             },
             menuChildren: List<MenuItemButton>.generate(
@@ -83,7 +82,7 @@ class _HomepageState extends BasePageState<Homepage,HomePageBloc> {
           ),
         ],
       ) : const PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: Size.fromHeight(100),
         child: SizedBox(),
       ),
       body: const SingleChildScrollView(

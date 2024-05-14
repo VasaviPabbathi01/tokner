@@ -47,7 +47,7 @@ class _CoverPageState extends BasePageState<CoverPage,HomePageBloc> {
               children: [
                 const Padding(
                   padding: EdgeInsets.only(left: 30.0, right: 30, top: 10),
-                  child: WebAppBar(),
+                  child: WebAppBar(indexValue: 5),
                 ),
                 Row(
                   children: [
